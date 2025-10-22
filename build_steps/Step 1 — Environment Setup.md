@@ -1,32 +1,36 @@
-**⚙️ FOUNDATION MODE — Setting Up the Virtual Environment**
+# ⚙️ FOUNDATION MODE — Setting Up the Virtual Environment
 
 We don’t install packages globally like beginners.
+
 We isolate everything — like real engineers.
+
 Let’s initialize our virtual environment (venv) properly ⬇️
 
-#############################################################################################
-*📁 Step 1 — Set Up the Project Folder*
+---------------------------------------------------------------------------------------------
+
+**📁 Step 1 — Set Up the Project Folder**
 
 Before writing any code, let’s create a clean workspace for this AI project.
 
 Open your terminal and run the following:
 
----------------------------------------------------------------------------------------------
-
-# Go to your Desktop (or any location you prefer)
+*# Go to your Desktop (or any location you prefer)*
 cd ~/Desktop
 
-# Create a new folder for this project
+*# Create a new folder for this project*
 mkdir Full-Stack-RAG-AI-Website
 
-# Enter the project folder
+*# Enter the project folder*
 cd Full-Stack-RAG-AI-Website
 
 ---------------------------------------------------------------------------------------------
 ✅ This ensures everything stays organized and isolated
+
 ✅ Avoids messy file management later
+
 ✅ You are now officially at Ground Zero — the clean start every serious developer should have
 
+---------------------------------------------------------------------------------------------
 
 *📁 STEP 2 — Create a Virtual Environment (venv)*
 
