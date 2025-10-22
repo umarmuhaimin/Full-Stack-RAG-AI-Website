@@ -32,11 +32,13 @@ Consistency > talent. This journey is structured to reward those who keep showin
 **IMPORTANT — HOW TO READ THIS GUIDE**
 
 Lines starting with # are instructions or notes → do NOT type them.
+
 Lines without # are actual commands you should copy & run in your terminal
 
 Example:
 
 *# This is an instruction (do not type this)*.
+
 *python3 -m venv venv   ← this is a real command (type this)*.
 
 
