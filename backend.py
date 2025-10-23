@@ -10,3 +10,22 @@ import time
 from werkzeug.utils import secure_filename
 from pathlib import Path
 from datetime import datetime, timedelta
+
+# ==============================
+# SECTION 2: PDF HANDLING
+# ==============================
+
+try:
+    from pypdf import PdfReader
+    PDF_SUPPORT = True
+    print("✅ PDF support enabled (using pypdf)")
+except ImportError:
+    try:
+        from PyPDF2 import PdfReader
+        PDF_SUPPORT = True
+        print("✅ PDF support enabled (using PyPDF2)")
+    except ImportError:
+        PDF_SUPPORT = False
+        print("⚠️ PDF support disabled (install: pip install pypdf)")
+        
+
