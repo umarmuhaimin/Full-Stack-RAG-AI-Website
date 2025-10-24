@@ -1,1 +1,8 @@
-private/
+venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+uploads/
+chroma_db/
+analytics_data.json
