@@ -1,8 +1,17 @@
+# Python
 venv/
-.env
 __pycache__/
 *.pyc
-.DS_Store
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Project specific
 uploads/
 chroma_db/
 analytics_data.json
+
+# OS
+.DS_Store
