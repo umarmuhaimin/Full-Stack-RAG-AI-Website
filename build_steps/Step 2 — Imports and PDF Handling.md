@@ -4,11 +4,7 @@ Preparing essential backend tools and ensuring the system is ready to safely han
 
 ---------------------------------------------------------------------------------------------
 
-**✅ SECTION 1: IMPORTS (Lines 1–12)**
-
-We start by importing all required tools for our backend.
-
----------------------------------------------------------------------------------------------
+**✅ SECTION 1: IMPORTS (Lines 1–12) → We start by importing all required tools for our backend.**
 
 **Step 1: Import Flask — allows this file to act as the backend server (Flask, request, Response, etc.)**
 
@@ -40,31 +36,36 @@ from datetime import datetime, timedelta
 
 ---------------------------------------------------------------------------------------------
 
-**✅ SECTION 2: PDF HANDLING (Lines 14–26)**
-
-We check whether PDF file support is available.
-
----------------------------------------------------------------------------------------------
+**✅ SECTION 2: PDF HANDLING (Lines 14–26) → We check whether PDF file support is available.**
 
 **Step 1: Try importing pypdf — the recommended modern library for reading PDFs.**
 
 try:
+
     from pypdf import PdfReader
+
     PDF_SUPPORT = True
+
     print("✅ PDF support enabled (pypdf)")
 
 **Step 2: If it’s not available, try importing PyPDF2 instead.**
 
 except ImportError:
+
     try:
+    
         from PyPDF2 import PdfReader
+
         PDF_SUPPORT = True
+
         print("✅ PDF support enabled (PyPDF2)")
 
 **Step 3: If neither library exists — disable PDF support and notify the user via a warning message.**
 
 except ImportError:
+
         PDF_SUPPORT = False
+
         print("⚠️  PDF support disabled (install: pip install pypdf)")
 
 **Step 4: Print a status message (success or warning) so the developer immediately knows if PDF support is active.**
