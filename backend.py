@@ -27,5 +27,15 @@ except ImportError:
     except ImportError:
         PDF_SUPPORT = False
         print("⚠️ PDF support disabled (install: pip install pypdf)")
-        
 
+# ==============================
+# SECTION 3: RAG IMPORTS
+# ==============================
+
+# RAG imports
+import chromadb
+from chromadb.utils import embedding_functions
+
+# Gemini imports
+import google.generativeai as genai
+from dotenv import load_dotenv
