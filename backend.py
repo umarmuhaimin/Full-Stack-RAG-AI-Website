@@ -85,3 +85,55 @@ print("🔧 ChromaDB Initialized")
 print(f"📁 Upload folder: {UPLOAD_FOLDER}")
 print(f"💾 ChromaDB path: {CHROMA_PATH}")
 print("="*50)
+
+
+# ==============================
+# 📁 SECTION 5: HELPER FUNCTIONS
+# ==============================
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def chunk_text(text, chunk_size=CHUNK_SIZE):
+    """Split text into chunks"""
+    chunks = []
+    for i in range(0, len(text), chunk_size):
+        chunk = text[i:i+chunk_size]
+        if chunk.strip():
+            chunks.append(chunk)
+    return chunks
+
+def extract_text_from_pdf(filepath):
+    """Extract text from PDF file"""
+    if not PDF_SUPPORT:
+        raise Exception("PDF support not installed. Run: pip install pypdf")
+    
+    try:
+        reader = PdfReader(filepath)
+        text = ""
+        
+        for page_num, page in enumerate(reader.pages):
+            page_text = page.extract_text()
+            if page_text:
+                text += f"\n--- Page {page_num + 1} ---\n"
+                text += page_text
+        
+        if not text.strip():
+            raise Exception("No text could be extracted from PDF")
+        
+        print(f"   📄 Extracted {len(text)} characters from {len(reader.pages)} pages")
+        return text
+    
+    except Exception as e:
+        raise Exception(f"PDF extraction failed: {str(e)}")
+
+def read_file_content(filepath, filename):
+    """Read content from file (supports .txt, .md, .pdf)"""
+    file_ext = filename.rsplit('.', 1)[1].lower()
+    
+    if file_ext == 'pdf':
+        return extract_text_from_pdf(filepath)
+    else:
+        # Text files
+        with open(filepath, "r", encoding="utf-8") as f:
+            return f.read()
